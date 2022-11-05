@@ -1,6 +1,6 @@
 // Assignment code here
 var generateBtn = document.querySelector("#generate");
-var characterlength = 8
+var characterlength = ;
 var choiceArray = [];
 
 var specialCharArray = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '?', '/', '<', '>'];
@@ -25,4 +25,32 @@ function writePassword() {
 
 function generatePassword () {
 
+
+}
+
+function getPrompts () {
+  choiceArray = [];
+  characterlength = parseInt(prompt("How many characters do you want your password to be? (8-128 characters")); 
+
+  if (isNaN(characterlength || characterlength < 8 || characterlength > 128)) {
+    alert("Character length has to be a number, 8 - 128 digits. Please try again.");
+    return false;
+    // return stops the function if the criteria above is met.
+  }
+
+  if(confirm("Would you like to include lowercase letters in your password?")) {
+    choiceArray = choiceArray.concat(lowerCaseArray);
+  }
+
+  if(confirm("Would you like to include uppercase letters in your password?")) {
+    choiceArray = choiceArray.concat(upperCaseArray);
+  }
+
+  if(confirm("Would you like to include special characters in your password?")) {
+    choiceArray = choiceArray.concat(specialCharArray);
+  }
+
+  if(confirm("Would you like to include numbers in your password?")) {
+    choiceArray = choiceArray.concat(numberArray);
+  }
 }
